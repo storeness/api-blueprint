@@ -20,6 +20,25 @@ be transcluded into the different service blueprints.
 > fork](https://github.com/MichaelHirn/hercule). Clone the repo and install
 > hercule with `npm install -g /path/to/hercule/fork/clone`
 
+## How does it work?
+
+In order to gain all the benefits (higher DRYness, multi-file support,
+increased readability) we add one simple step, that can be completely automated.
+
+The workflow looks as followed:
+
+(1) **Write your blueprint**  
+    *Thanks to resource transcluding, this step becomes quicker and easier then
+ever*  
+
+(2) **Transclude the file with `hercule`**  
+    *All the specified ressources get transcluded and the final api blueprint
+generated, with just one simple command: `hercule service-blueprint.md -o
+apiary.apib`*  
+
+(3) **Finished docs and api blueprint**  
+
+
 ## Why?
 
 Following through on the api blueprint standard leads to many desired outputs:
@@ -33,8 +52,3 @@ Following through on the api blueprint standard leads to many desired outputs:
 API blueprint is a step in the right direction and with this repository (that
 serves as the collective resource hub) and `hercule`s power, we gain the
 promised benefits already.
-
-## TODO
-
-- Lay out a coherent file structure for this repository, which organizes the common
-resources.
