@@ -38,7 +38,3 @@ promised benefits already.
 
 - Lay out a coherent file structure for this repository, which organizes the common
 resources.
-
-- Extend the JSON response specification with `pagination`, `errors`, `real-time`?,
-  `requests`?, `JSON schemas`.
-

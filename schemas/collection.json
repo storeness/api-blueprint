@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://baabedo.com/schemas/list",
+  "id": "https://baabedo.com/schemas/collection",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
       "type": {
           "id": "https://baabedo.com/schemas/type",
@@ -11,15 +12,15 @@
           "id": "https://baabedo.com/schemas/data",
           "type": "array",
           "items": {
-              "id": "http://jsonschema.net/data/0",
+              "id": "https://jsonschema.net/schemas/item",
               "type": "object",
               "properties": {
                   "type": {
-                      "id": "http://jsonschema.net/data/0/type",
+                      "id": "https://baabedo.com/schemas/item/type",
                       "type": "string"
                   },
                   "id": {
-                      "id": "http://jsonschema.net/data/0/id",
+                      "id": "https://baabedo.com/schemas/item/id",
                       "type": "string"
                   }
               },
