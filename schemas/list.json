@@ -6,7 +6,8 @@
   "properties": {
       "type": {
           "id": "https://baabedo.com/schemas/type",
-          "type": "string"
+          "type": "string",
+          "pattern": "^list."
       },
       "data": {
           "id": "https://baabedo.com/schemas/data",
