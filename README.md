@@ -37,6 +37,7 @@ generated, with just one simple command: `hercule service-blueprint.md -o
 apiary.apib`*  
 
 (3) **Finished docs and api blueprint**  
+    *To validate and print the finished docs use [drafter](https://github.com/apiaryio/drafter) and the [apiary client](https://github.com/apiaryio/apiary-client)*
 
 
 ## Why?
