@@ -15,11 +15,6 @@ between all our micro services, which keeps things DRY and consistent.
 This repository is the place where these resources live and from which they can
 be transcluded into the different service blueprints.
 
-> **NOTE:** Transcluding HTTP links is not yet provided with hercule. A PR will
-> be emitted in the next couple of days. So long you can use [this
-> fork](https://github.com/MichaelHirn/hercule). Clone the repo and install
-> hercule with `npm install -g /path/to/hercule/fork/clone`
-
 ## How does it work?
 
 In order to gain all the benefits (higher DRYness, multi-file support,
@@ -29,7 +24,13 @@ The workflow looks as followed:
 
 (1) **Write your blueprint**  
     *Thanks to resource transcluding, this step becomes quicker and easier then
-ever*  
+ever. There sunk also some thoughts into how to lay out the blueprint as the
+process described by apiary is not quite efficient. With the new process, one
+has only to write descriptions of resources and actions and model the data
+structure. All the other parts are already developed and can simply transcluded
+to gain a coherent API documentation. The standard may improve over time, but so
+long take a look at the repository at storeness/humaidor to see an example and
+get started from there.*  
 
 (2) **Transclude the file with `hercule`**  
     *All the specified ressources get transcluded and the final api blueprint
