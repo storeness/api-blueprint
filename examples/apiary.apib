@@ -1,0 +1,139 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# Door
+
+This is our sample blueprint for the **Door API**. A API with which you can control doors.
+
+# Group Door
+
+The resource for controlling your doors.
+
+## Door [/doors/{door_id}]
+
+A door represents a moveable object between two neighboring spaces.
+
++ Parameters
+    - door_id: 1 (string, required)
+    
+        This Parameter specifies the door and needs to be set when interaction with a specific door endpoint.
+    
+    
+    
+    
+
+### List Doors [GET /doors]
+
+This action lists all doors.
+
++ Response 200
+
+    + Attributes (List Doors)
+
+### Get Door [GET]
+
+This action returns one specific door.
+
++ Response 200
+
+    + Attributes (Get Door)
+
+### Secure Door [POST /doors/{door_id}/security]
+
+This action locks/unlocks a door.
+
++ Parameters
+    - door_id: 1 (string, required)
+    
+        This Parameter specifies the door and needs to be set when interaction with a specific door endpoint.
+    
+    
+    
+    
+
+
++ Request  Success
+
+    + Attributes (Secure Door Request)
+
++ Response 201
+
+    + Attributes (Get Door)
+
+
++ Request  Error 404
+
+    + Attributes (Secure Door Request 404)
+
++ Response 404
+
+    + Attributes (Secure Door Response 404)
+
+# Group Key
+
+A second resource group (very much experimental) with with you can create keys for your doors.
+
+
+
+# Data Structures
+
+## Door
+
+- door_id: 1 (string, required)
+
+    This Parameter specifies the door and needs to be set when interaction with a specific door endpoint.
+## List Doors
+
+- type: list.door (string, required)
+
+    This is the type of this item. The type for this item will be `list.door`
+- data: [] (array[Get Door], required)
+
+    This array contains all the relevant data. The items of this array are `Get Door` objects.
+
+    - Items
+      - (Get Door)
+
+## Get Door
+
+- id: 1 (string, required)
+
+    This is the ID of this item. A unique identifier that will always point to this item
+- type: door (string, required)
+
+    This is the type of this item. The type for this item will be `door`
+- from: `kitchen` (string, required)
+
+    Specifes which rooms the door connects/seperates. This is from - the door opens into into `to`.
+- to: `living room` (string, required)
+
+    This is where the door leads to
+- locked: false (boolean, required)
+
+    Specifies if a door is locked or not
+
+## Secure Door Request
+
+- locked: true (boolean, required)
+
+    Specifies if a door is locked or not
+
+## Secure Door Request 404
+
+
+
+## Secure Door Response 404
+
+- id: true (string, optional)
+
+    This is the ID for this error. Please submit the error ID along with eventual error reports, this helps us to pin point the error in our intern logs. This error ID must not exist for every error but if it does exist it is the same as the `X-Request-Id` header.
+- type: error (string, required)
+
+    This is the type of this item. The type for this item will be `error`.
+- status: 404 (number, required)
+
+    The HTTP Status code for the error
+- message: `The requested resource invalid-door-id does not exist.` (string, required)
+
+    The specific error message. If the error message is strange, you can file an error report - but make sure to include the error ID otherwise we can not find more informations for this particular error.
+
