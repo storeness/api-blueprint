@@ -1,0 +1,3 @@
+[submodule "examples/blueprint/api-blueprint"]
+	path = examples/blueprint/api-blueprint
+	url = git@github.com:storeness/api-blueprint.git

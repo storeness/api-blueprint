@@ -21,7 +21,7 @@ out the files at `data-structures/{resource-name}/items/*`.
   order elements. Just browse the directory, this makes everything clear.
 - Create your main API blueprint file in the root directory of `blueprint`.
 - The response/request Attributes should match the name of the Action to which it belongs. For more information see `resources/door.md`.
-- **About _default_**: MSON allows default values, which seem to have the same behavior as sample values. But a default value might be handy, especially for requests, with optional parameters. So to tell the user what happens if an optional value is not defined, we should include this explicitly into the description. This is because we have some problems to transclude this with hercule on the fly. A possible solution might look like this (pretty ugly though) `[:Object Item Id](path/to/id.md default:"- Default\n  - \`default value\``.
+- **About _default_**: MSON allows default values, which seem to have the same behavior as sample values. But a default value might be handy, especially for requests, with optional parameters. So to tell the user what happens if an optional value is not defined, we should include this explicitly into the description. This is because we have some problems to transclude this with hercule on the fly. A possible solution might look like this (pretty ugly though) `[:Object Item Id](path/to/id.md default:"- Default\n  - 'default value'`.
 
 ## Generate the finished API Blueprint
 
@@ -29,6 +29,18 @@ To generate a complete and valid blueprint for all the files inside the
 `blueprint` directory, run the following command (inside of this directory
 "`examples`")
 
-```
+``` shell
 hercule blueprint/door.md -o apiary.apib
+```
+
+But make sure, that you have added the this reposity as submodule to the
+`blueprint` directory. You can do so with the following commands
+
+``` shell
+git submodule add git@github.com:storeness/api-blueprint.git /path/to/app/blueprint/api-blueprint  
+cd /path/to/app/blueprint/api-blueprint
+git checkout some-branch-or-tag
+cd ..
+git submodule update
+git aa && git commit -m 'updated api-blueprint to X'
 ```
